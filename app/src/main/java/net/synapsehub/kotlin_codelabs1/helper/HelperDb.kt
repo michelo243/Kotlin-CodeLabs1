@@ -10,7 +10,7 @@ import net.synapsehub.kotlin_codelabs1.model.Humain
 val DATABASE_NAME="codelabs.db"
 val TABLE_NAME="Users"
 val COL_NAME="name"
-val COL_USERNAME="username"
+val COL_EMAIL="email"
 val COL_PASSWORD="password"
 val COL_ID="_id"
 
@@ -22,7 +22,7 @@ class HelperDb(var context: Context) :SQLiteOpenHelper(context, DATABASE_NAME, n
         val tableCREATE="CREATE TABLE "+ TABLE_NAME + " (" +
                 COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 COL_NAME + " VARCHAR (100)," +
-                COL_USERNAME + " VARCHAR," +
+                COL_EMAIL + " VARCHAR," +
                 COL_PASSWORD + " VARCHAR)"
         db?.execSQL(tableCREATE)
     }
@@ -36,7 +36,7 @@ class HelperDb(var context: Context) :SQLiteOpenHelper(context, DATABASE_NAME, n
         val contentValues=ContentValues()
 
         contentValues.put(COL_NAME,humain.name)
-        contentValues.put(COL_USERNAME,humain.username)
+        contentValues.put(COL_EMAIL,humain.email)
         contentValues.put(COL_PASSWORD,humain.password)
 
         var result= db.insert(TABLE_NAME,null,contentValues)

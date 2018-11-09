@@ -4,12 +4,12 @@ class Humain{
 
     var id:Int=0
     var name:String=""
-    var username:String=""
+    var email:String=""
     var password:String=""
 
-    constructor(name:String,username:String,pasword:String){
+    constructor(name:String,email:String,password:String){
         this.name=name
-        this.username=username
+        this.email=email
         this.password=password
     }
 
